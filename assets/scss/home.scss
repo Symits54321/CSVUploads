@@ -1,0 +1,236 @@
+#home{
+    width:100%;
+    height:100%;
+    padding:10px 20px;
+   
+    //position: relative;
+    #head-mid-logos{
+        width:60vw;
+        max-width: 400px;
+        padding:20px;
+        @media(max-width:831px){
+            padding: 20px 0px;
+        }
+        #csv{
+            width:100%;
+            margin-left: 10px;
+        }
+        #welcome{
+            width:80%;
+            margin-left: 45px;
+        }
+    }
+    .aside-logo{
+        
+        max-width: 220px;
+        width:15vw;
+        height:60%;
+        padding:10px;
+        @media (min-width:740px) {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+        }
+
+        @media (max-width:740px) {
+            width: 12vw;
+            height:10vh;
+        }
+        
+
+        img{
+            width:100%;
+            height:auto;
+
+            @media (max-width:740px) {
+                width:auto;
+                height: 100%;
+            }
+
+        }
+        
+        position: absolute;
+        right:50px;
+        bottom:-20px;
+        @media (max-width:740px) {
+            right:0px;
+            top:0;
+        }
+
+    }
+}
+
+.file-search{
+    width:100%;
+    @media(max-width:831px){
+      
+        gap:25px;
+        margin-top:50px;
+    }
+
+    display:flex;
+    flex-direction: column;
+   
+    align-items: flex-start;
+    gap:50px;
+    @media (max-width:740px) {
+        width:100%;
+    }
+    @media (max-width:432px) {
+        
+        margin-top:10px;
+        flex-direction: column;
+    }
+
+    div{
+         height:auto;
+         width:100%;
+         display:flex;
+         flex-wrap: wrap;
+         justify-content: center;
+         gap:20px;
+
+         @media (max-width:432px) {
+            flex-direction: column-reverse;
+            align-items: center;
+         }
+
+        input{
+            height:40px;
+            min-width:200px;
+            width:40%;
+            color: gray;
+
+        
+            border-radius: 9px;
+            @media (max-width:432px) {
+                min-width:0px;
+                width:100%;
+            }
+        }
+
+        input::placeholder{
+            text-align:center;
+            overflow: hidden;
+        }
+
+        a{  
+            height:35px;
+            width:62px;
+            margin-top: 3px;
+            padding:5px 5px;
+             border-radius: 3px;
+            box-shadow: 0px 0px 3px 3px white;
+            p{
+                margin:auto;
+                padding:0;
+            }
+        }
+    
+        a:active{
+            box-shadow: 0px 0px 1px 1px white;
+        }
+
+        #dropArea{
+            border:2px  rgb(174, 192, 208);
+            border-radius: 6px;
+            min-width:260px;
+            width:60vw;
+
+            @media (max-width:740px) {
+                min-width:0;
+                width:90vw;
+            }
+           
+            min-height:75px;
+            height:20vh;
+            border-style: dashed;
+            opacity:0.6;
+            
+           p{
+            font-size: 12px;
+            letter-spacing: 1pt;
+            padding:0;
+            margin: auto;
+            color: beige;
+            text-align: center;
+           }
+
+        }
+    
+    }
+
+    #list{
+        ul{
+            list-style: none;
+            min-width: 200px;
+            width:50vw;
+          
+            @media (max-width:740px) {
+               
+                width:80vw;
+            }
+            border:1px solid white;
+            background-color: aliceblue;
+            border-radius: 5px;
+            padding: 3px 5px 13px 10px;
+            color: black;
+
+            div{
+                border-bottom:1px solid white;
+                color: black;
+                border-bottom: 1px solid gray;
+                padding: 4px ;
+                p{
+                    color: black;
+                    margin: 4px auto; 
+                    padding: 15px;
+                }
+            }
+        
+
+            li{  
+                display:flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                gap:5px;
+                p {
+                    
+                    
+                    background: url('../images/file-csv-solid.svg');          
+                    width: 20px;
+                    height: 20px;
+                    color: white;
+                    margin:9px 3px;
+                    
+                }
+
+                a{
+                    color: black;
+                    width:95%;
+                    height:auto;
+                   // text-align: center; 
+                   box-shadow: none;
+                    margin: 4px 3px;
+                    padding: 5px 0px;
+                    transition: 1000ms;
+                }
+                a:hover{
+                    text-decoration: underline;
+                    
+                }
+                padding:3px 4px;
+                margin: 15px 15px;
+            }
+
+            
+         }
+      }
+
+    
+    
+
+    
+   
+}

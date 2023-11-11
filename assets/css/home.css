@@ -1,0 +1,164 @@
+#home {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px; }
+  #home #head-mid-logos {
+    width: 60vw;
+    max-width: 400px;
+    padding: 20px; }
+    @media (max-width: 831px) {
+      #home #head-mid-logos {
+        padding: 20px 0px; } }
+    #home #head-mid-logos #csv {
+      width: 100%;
+      margin-left: 10px; }
+    #home #head-mid-logos #welcome {
+      width: 80%;
+      margin-left: 45px; }
+  #home .aside-logo {
+    max-width: 220px;
+    width: 15vw;
+    height: 60%;
+    padding: 10px;
+    position: absolute;
+    right: 50px;
+    bottom: -20px; }
+    @media (min-width: 740px) {
+      #home .aside-logo {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center; } }
+    @media (max-width: 740px) {
+      #home .aside-logo {
+        width: 12vw;
+        height: 10vh; } }
+    #home .aside-logo img {
+      width: 100%;
+      height: auto; }
+      @media (max-width: 740px) {
+        #home .aside-logo img {
+          width: auto;
+          height: 100%; } }
+    @media (max-width: 740px) {
+      #home .aside-logo {
+        right: 0px;
+        top: 0; } }
+
+.file-search {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 50px; }
+  @media (max-width: 831px) {
+    .file-search {
+      gap: 25px;
+      margin-top: 50px; } }
+  @media (max-width: 740px) {
+    .file-search {
+      width: 100%; } }
+  @media (max-width: 432px) {
+    .file-search {
+      margin-top: 10px;
+      flex-direction: column; } }
+  .file-search div {
+    height: auto;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px; }
+    @media (max-width: 432px) {
+      .file-search div {
+        flex-direction: column-reverse;
+        align-items: center; } }
+    .file-search div input {
+      height: 40px;
+      min-width: 200px;
+      width: 40%;
+      color: gray;
+      border-radius: 9px; }
+      @media (max-width: 432px) {
+        .file-search div input {
+          min-width: 0px;
+          width: 100%; } }
+    .file-search div input::placeholder {
+      text-align: center;
+      overflow: hidden; }
+    .file-search div a {
+      height: 35px;
+      width: 62px;
+      margin-top: 3px;
+      padding: 5px 5px;
+      border-radius: 3px;
+      box-shadow: 0px 0px 3px 3px white; }
+      .file-search div a p {
+        margin: auto;
+        padding: 0; }
+    .file-search div a:active {
+      box-shadow: 0px 0px 1px 1px white; }
+    .file-search div #dropArea {
+      border: 2px #aec0d0;
+      border-radius: 6px;
+      min-width: 260px;
+      width: 60vw;
+      min-height: 75px;
+      height: 20vh;
+      border-style: dashed;
+      opacity: 0.6; }
+      @media (max-width: 740px) {
+        .file-search div #dropArea {
+          min-width: 0;
+          width: 90vw; } }
+      .file-search div #dropArea p {
+        font-size: 12px;
+        letter-spacing: 1pt;
+        padding: 0;
+        margin: auto;
+        color: beige;
+        text-align: center; }
+  .file-search #list ul {
+    list-style: none;
+    min-width: 200px;
+    width: 50vw;
+    border: 1px solid white;
+    background-color: aliceblue;
+    border-radius: 5px;
+    padding: 3px 5px 13px 10px;
+    color: black; }
+    @media (max-width: 740px) {
+      .file-search #list ul {
+        width: 80vw; } }
+    .file-search #list ul div {
+      border-bottom: 1px solid white;
+      color: black;
+      border-bottom: 1px solid gray;
+      padding: 4px; }
+      .file-search #list ul div p {
+        color: black;
+        margin: 4px auto;
+        padding: 15px; }
+    .file-search #list ul li {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: flex-start;
+      gap: 5px;
+      padding: 3px 4px;
+      margin: 15px 15px; }
+      .file-search #list ul li p {
+        background: url("../images/file-csv-solid.svg");
+        width: 20px;
+        height: 20px;
+        color: white;
+        margin: 9px 3px; }
+      .file-search #list ul li a {
+        color: black;
+        width: 95%;
+        height: auto;
+        box-shadow: none;
+        margin: 4px 3px;
+        padding: 5px 0px;
+        transition: 1000ms; }
+      .file-search #list ul li a:hover {
+        text-decoration: underline; }

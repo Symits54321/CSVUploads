@@ -1,0 +1,36 @@
+<link rel="stylesheet" href="/css/csvdetail.css">
+
+<div id="home-detail">
+    <h2 id="filename"><%= _fileName %></h2>
+ 
+  
+
+    <table border="1" >
+
+      <thead>
+        <tr>
+          <% Object.keys(_data[0]).forEach((key) => { %>
+            <th>
+              <input type="text" placeholder="Filter" oninput="filterTable('<%= key %>')" />
+              <%= key %>
+            </th>
+          <% }); %>
+        </tr>
+      </thead>
+
+      <tbody id="csvtablebody">
+        <% _data.forEach((row) => { %>
+          <tr>
+            <% Object.values(row).forEach((value) => { %>
+              <td><%= value %></td>
+            <% }); %>
+          </tr>
+        <% }); %>
+      </tbody>
+
+    </table>
+
+  </div>   
+  
+   
+    <script src="/js/csvdetail.js"></script>

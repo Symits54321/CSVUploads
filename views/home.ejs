@@ -1,0 +1,55 @@
+<link rel="stylesheet" href="/css/home.css">
+
+
+<div id="home">
+
+  <div id="head-mid-logos">
+    <img id="csv" src="/images/CSVuploads_sharp.JPG" alt="">
+    <img id="welcome" src="/images/Welcome to csv uploads.JPG" alt="">
+  </div>
+
+ 
+
+  <div class="file-search"> 
+
+    
+    <div>
+      <div id="dropArea"><p>drag and drop files to upload</p></div>
+      <input type="file" id="csvFileInput" style="display: none;">
+    </div>
+
+    <div>
+      <input type="text" class="searchbox" placeholder="Type to search your csv files"> 
+      <a id="uploadLink"><p>Upload</p></a>
+    </div>
+   
+    <div id="list">
+      <ul id="csvlist">
+        <div><p>Your Uploads</p></div>
+        <% for (const file of _Uploads) { %>
+          <li ><p></p><a href="/viewCSV/<%= file %>"><%= file %></a></li>
+       <% } %>
+       
+      </ul>
+    </div>
+    
+      
+  </div> 
+  
+
+
+       <!-- <div>
+        <%= title %>
+        <%= _para %>
+       </div> -->
+
+       <div class="aside-logo">
+          <img src="images/homeiconact.png">
+       </div>
+       
+ </div>    
+
+
+
+
+  <script src="/js/home.js"></script>

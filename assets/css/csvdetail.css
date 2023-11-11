@@ -1,0 +1,9 @@
+#home-detail {
+  width: 100%;
+  height: 100%;
+  padding: 10px 20px;
+  overflow: scroll; }
+  #home-detail table {
+    overflow: scroll; }
+    #home-detail table thead tr th input {
+      color: grey; }
