@@ -16,9 +16,10 @@ const multer = require('multer');
 //const session = require('express-session');
 //const passport = require('passport');
 //const passportLocal = require('./config/passport-local-strategy');
+
 const path = require('path');
 
-// cors error handler
+// cors error handler(in deploying)
 // const allowedOrigins = [
 //     'https://issue-tracker-symits.onrender.com',
 //     // Add any other allowed origins here.

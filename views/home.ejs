@@ -2,7 +2,7 @@
 
 
 <div id="home">
-
+<!-- // CSV Uploades..... images -->
   <div id="head-mid-logos">
     <img id="csv" src="/images/CSVuploads_sharp.JPG" alt="">
     <img id="welcome" src="/images/Welcome to csv uploads.JPG" alt="">
@@ -14,18 +14,23 @@
 
     
     <div>
+       <!-- DRAG and DROP area to Upload files -->
       <div id="dropArea"><p>drag and drop files to upload</p></div>
+       <!-- HIDDEN FILE INPUT  -->
       <input type="file" id="csvFileInput" style="display: none;">
     </div>
 
     <div>
+      <!-- Search Box to filer out your file that you uploaded  -->
       <input type="text" class="searchbox" placeholder="Type to search your csv files"> 
+      <!-- Upload button to Upload files  -->
       <a id="uploadLink"><p>Upload</p></a>
     </div>
    
     <div id="list">
       <ul id="csvlist">
         <div><p>Your Uploads</p></div>
+        <!-- LIST of CSV Files UPLOADED  -->
         <% for (const file of _Uploads) { %>
           <li ><p></p><a href="/viewCSV/<%= file %>"><%= file %></a></li>
        <% } %>
@@ -36,13 +41,8 @@
       
   </div> 
   
-
-
-       <!-- <div>
-        <%= title %>
-        <%= _para %>
-       </div> -->
-
+     
+    <!-- aside image too make page beautifull -->
        <div class="aside-logo">
           <img src="images/homeiconact.png">
        </div>

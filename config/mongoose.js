@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 //connecting
 main().catch(err => console.log("database err"+err));
 async function main(){
-    await mongoose.connect ('mongodb://127.0.0.1:27017/CsvUploads135')
+    await mongoose.connect ('mongodb+srv://sumitsingh3357:NCWVCTc2Lz5DL581@cluster0.obuakmx.mongodb.net/?retryWrites=true&w=majority')
 }
 
  // connect to DB

@@ -1,13 +1,15 @@
 <link rel="stylesheet" href="/css/csvdetail.css">
 
+<!-- Slider is having bars to scroll the csv document if its overflown  -->
 <div id="slider">
 <div id="home-detail">
+  <!-- Filename of the file opened from home.ejs list of uploads -->
     <h2 id="filename"><%= _fileName %></h2>
  
   
-
+   <!-- Table to show the csv datas  -->
     <table border="1" >
-
+         <!--  thead contains header of csv document (which is key in object file made by papaparse at homecontroller home) -->
       <thead>
         <tr>
           <% Object.keys(_data[0]).forEach((key) => { %>

@@ -1,3 +1,7 @@
+//---**-- This API is generally used while filtering data so that javascript can communicate with it.
+
+
+
 const fs = require('fs');
 const Papa = require('papaparse');
 const path = require('path');
@@ -57,7 +61,7 @@ module.exports.viewcsv = async function(req, res) {
   }
 };
 
-
+// It shows the files uploaded 
 module.exports.uploads=async function(req,res){
 
   try {

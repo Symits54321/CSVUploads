@@ -10,6 +10,9 @@ admin.initializeApp({
 module.exports=admin;
 
 
+
+// consoling succesfull connection
+
 admin.app().storage().bucket().getFiles() // Access any storage method to check the connection
   .then(() => {
     console.log('Succesfully connected to the Firebase Storage bucket');

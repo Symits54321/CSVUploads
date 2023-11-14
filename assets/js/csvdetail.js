@@ -4,7 +4,7 @@ console.log("csvfilename is "+csvFileName);
 
 let csvTableBody = document.querySelector('#csvtablebody');
 
-let  _data; 
+let  _data; // data to store the csv data
 
 
 
@@ -12,7 +12,7 @@ let  _data;
 
 
 
-// call the api to get all isuues related to the project  -----------------------------------------  
+// call the api to get a particular csv files  -----------------------------------------  
 async function csvApiCall(){
 
   let url = `http://localhost:8150/api/csv/?csvname=${csvFileName}`;
@@ -39,10 +39,11 @@ async function csvApiCall(){
          
      
 }
-
+// calling to get the files
 csvApiCall();
 
-
+// here text1= text done in filter and text2= column header ,from which you  want to filter
+// filters the data corresponding 
 async function filterInputCsv(text1,text2){
 
   let dataToFilter = _data;
@@ -55,11 +56,12 @@ let filteredDataResult = await dataToFilter.filter(m =>
 return filteredDataResult;
 
 }
-
+// takes ouput of filterInput csv and display it 
 async function giveSuggestion(text1,text2){
 
 
 let filteredTextResult = await filterInputCsv(text1,text2);
+
 
 displayCsv(filteredTextResult);
 
@@ -67,7 +69,7 @@ displayCsv(filteredTextResult);
 
 }
 
-
+// handles display of data to table body
 async function displayCsv(data){
 
   try{
@@ -99,7 +101,7 @@ async function displayCsv(data){
 }
 
 
-
+// this is the function called first when something is typed in filter
 async function filterTable(columnName) {
 
  

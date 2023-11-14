@@ -5,7 +5,7 @@ let searchBox = document.querySelector('.searchbox');
 let listbox = document.querySelector('#csvlist');
 let notice = document.querySelector('#notice');
 
-let csvDataFiles;
+let csvDataFiles; // used to store data from api
 
 // when Upload btn is clicked then fileInput(hidden) is also clicked
 uploadbtn.addEventListener('click', function() {
@@ -100,7 +100,7 @@ dropArea.addEventListener('drop', function(e) {
 
 
 
-
+// apic to get all list of uploads data
 async function allCsvApiCall(){
 
     let url = `http://localhost:8150/api/csv/files`;
@@ -129,7 +129,7 @@ async function allCsvApiCall(){
 
 
 
-
+// filter data with the text of api
 async function filterInputCsv(text){
 
     let dataToFilter = csvDataFiles;
@@ -142,7 +142,7 @@ async function filterInputCsv(text){
   return filteredDataResult;
   
   }
-  
+// handles suggesestion   
   async function giveSuggestion(text){
   
   
@@ -154,7 +154,7 @@ async function filterInputCsv(text){
   
   }
   
-  
+ // displays csv list in your uploads section 
   async function displayCsvList(data){
   
     try{
@@ -192,7 +192,7 @@ async function filterInputCsv(text){
       }
   }
   
-  
+ // manage flashing message 
   async function fileUploadFlashing(){
           
     notice.textContent="File Uploaded Succesfully";
@@ -230,7 +230,7 @@ if(searchBox){
        
     });
 }
-
+// refresh page after uploading
 async function RefreshPage() {
     setTimeout(async () => {
         try {

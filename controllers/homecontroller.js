@@ -10,9 +10,11 @@ const path = require('path');
 const Papa = require('papaparse');
 
 
-let uploadedFiles;
+let uploadedFiles; // no use now
 
 // ----------------Firebase -- Storage -----
+
+
 const { Storage } = require('@google-cloud/storage');
 const admin = require('../config/firebaseConfig');
 /*
@@ -92,7 +94,7 @@ const upload = multer({ storage: multerStorage });
 
 
 
-
+// Managing uploading of csv files to firebase storage
 
 module.exports.upload = async function (req, res) {
 
