@@ -116,7 +116,8 @@ module.exports.upload = async function (req, res) {
     const stream = file.createWriteStream({
       metadata: {
         contentType: req.file.mimetype
-      }
+      },
+      resumable: true // Enable resumable uploads for larger files
     });
 
     stream.on('error', (err) => {
