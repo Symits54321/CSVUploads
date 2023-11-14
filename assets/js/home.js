@@ -103,7 +103,7 @@ dropArea.addEventListener('drop', function(e) {
 // apic to get all list of uploads data
 async function allCsvApiCall(){
 
-    let url = `http://localhost:8150/api/csv/files`;
+    let url = `https://csvuploadsbysymits54321.onrender.com/api/csv/files`;
      
       // calling api and checking   
       let response = await fetch(url);

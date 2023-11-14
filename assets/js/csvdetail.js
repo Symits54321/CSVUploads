@@ -15,7 +15,7 @@ let  _data; // data to store the csv data
 // call the api to get a particular csv files  -----------------------------------------  
 async function csvApiCall(){
 
-  let url = `http://localhost:8150/api/csv/?csvname=${csvFileName}`;
+  let url = `https://csvuploadsbysymits54321.onrender.com/api/csv/?csvname=${csvFileName}`;
    
     // calling api and checking   
     let response = await fetch(url);
