@@ -3,10 +3,11 @@ let dropArea = document.getElementById('dropArea');
 let fileInput = document.getElementById('csvFileInput');
 let searchBox = document.querySelector('.searchbox');
 let listbox = document.querySelector('#csvlist');
+let notice = document.querySelector('#notice');
 
 let csvDataFiles;
 
-// when dropdown btn is clicked then fileInput is also clicked (which is in hidden form)
+// when Upload btn is clicked then fileInput(hidden) is also clicked
 uploadbtn.addEventListener('click', function() {
     fileInput.click();
 });
@@ -14,14 +15,15 @@ uploadbtn.addEventListener('click', function() {
 
 
 
-// When a file is selected using the file input
+// When a file is selected and open btn is clicked 
 fileInput.addEventListener('change', function() {
     const file = this.files[0];
 
     if (file && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel')) {
         // Create a new FormData object and append the file
+      
         const formData = new FormData();
-        formData.append('csvFile', file);
+        formData.append('file', file);
 
         // Use XMLHttpRequest for the file upload
         const xhr = new XMLHttpRequest();
@@ -29,10 +31,12 @@ fileInput.addEventListener('change', function() {
 
         xhr.onload = function() {
             if (xhr.status === 200) {
-                window.location.reload();
+                RefreshPage();
+                fileUploadFlashing();
                 console.log('File uploaded successfully');
             } else {
                 console.error('Error:', xhr.statusText);
+                fileErrorFlashing();
             }
         };
 
@@ -43,6 +47,7 @@ fileInput.addEventListener('change', function() {
         // Send the FormData object
         xhr.send(formData);
     }else{
+        fileErrorFlashing();
         console.log("Its Not csv file , not uploaded");
     }
 });
@@ -66,9 +71,11 @@ dropArea.addEventListener('drop', function(e) {
     const file = e.dataTransfer.files[0];
     
     // if file then make form data and append in it and then upload
-    if (file  && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel')) {                      
+    //if (file  && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel')) {                      
+        if (file  && (file.type === 'text/csv' || file.type === 'application/vnd.ms-excel')) {                      
+    
         const formData = new FormData();
-        formData.append('csvFile', file);
+        formData.append('file', file);
 
         fetch('/upload', {
             method: 'POST',
@@ -77,12 +84,15 @@ dropArea.addEventListener('drop', function(e) {
         .then(response => response.text())
         .then(data => {
             console.log( "Form data :- "+data); // You can handle the server response here
-            window.location.reload();
+               RefreshPage();
+                fileUploadFlashing();
+                console.log('File uploaded successfully');
         })
         .catch(error => {
             console.error('Error:', error);
         });
     }else{
+        fileErrorFlashing();
         console.log("Its Not csv file , not uploaded");
     }
 });
@@ -183,7 +193,26 @@ async function filterInputCsv(text){
   }
   
   
+  async function fileUploadFlashing(){
+          
+    notice.textContent="File Uploaded Succesfully";
+    notice.style.boxShadow = '0px 0px 25px 20px lightgoldenrodyellow';
+    notice.style.animation = "flashing 7600ms linear";
+   setTimeout(FlashingNone,7750) ;
 
+  }
+
+  async function FlashingNone(){
+    notice.style.animation = "none";
+  }
+
+  async function fileErrorFlashing(){
+    notice.textContent="Uploading Failed";
+    notice.style.boxShadow = '0px 0px 25px 20px red';
+    notice.style.animation = "flashing 7600ms linear";
+    setTimeout(FlashingNone,7750) ;
+
+}
 
 
 // Event listener function for search input
@@ -200,4 +229,15 @@ if(searchBox){
         }
        
     });
+}
+
+async function RefreshPage() {
+    setTimeout(async () => {
+        try {
+            await allCsvApiCall();
+            displayCsvList(csvDataFiles);
+        } catch (error) {
+            console.error('Error refreshing page:', error);
+        }
+    }, 300); // Changed 1000s to 1000 (milliseconds)
 }

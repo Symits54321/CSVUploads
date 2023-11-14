@@ -1,5 +1,6 @@
 <link rel="stylesheet" href="/css/csvdetail.css">
 
+<div id="slider">
 <div id="home-detail">
     <h2 id="filename"><%= _fileName %></h2>
  
@@ -10,9 +11,10 @@
       <thead>
         <tr>
           <% Object.keys(_data[0]).forEach((key) => { %>
-            <th>
+            <th> 
+              <p><%= key %></p>
               <input type="text" placeholder="Filter" oninput="filterTable('<%= key %>')" />
-              <%= key %>
+             
             </th>
           <% }); %>
         </tr>
@@ -30,7 +32,9 @@
 
     </table>
 
-  </div>   
+  </div> 
+  
+</div>
   
    
     <script src="/js/csvdetail.js"></script>

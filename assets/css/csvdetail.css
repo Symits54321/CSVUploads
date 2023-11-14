@@ -1,9 +1,44 @@
-#home-detail {
-  width: 100%;
-  height: 100%;
-  padding: 10px 20px;
-  overflow: scroll; }
-  #home-detail table {
-    overflow: scroll; }
-    #home-detail table thead tr th input {
-      color: grey; }
+#slider {
+  width: 97vw;
+  height: 60vh;
+  overflow-y: auto;
+  overflow-x: auto; }
+  @media (max-width: 740px) {
+    #slider {
+      height: 80vh; } }
+  #slider #home-detail {
+    padding: 10px 20px;
+    color: aliceblue; }
+    #slider #home-detail table {
+      width: auto;
+      height: auto;
+      border-radius: 7px;
+      border: 2px solid #ffd640; }
+      #slider #home-detail table thead tr th {
+        background-image: radial-gradient(#11b928, transparent);
+        height: 80px; }
+        #slider #home-detail table thead tr th input {
+          color: #4e4b4b;
+          background-image: radial-gradient(#ffa900, transparent); }
+        #slider #home-detail table thead tr th input::placeholder {
+          text-align: center; }
+      #slider #home-detail table tbody tr td {
+        text-indent: 10px;
+        padding: 5px; }
+
+#slider::-webkit-scrollbar {
+  width: 15px;
+  /* width of the scrollbar */ }
+
+/* Track (background) of the scrollbar */
+#slider::-webkit-scrollbar-track {
+  width: 15px;
+  background: #fff;
+  /* color of the track */ }
+
+/* Handle (thumb) of the scrollbar */
+#slider::-webkit-scrollbar-thumb {
+  background-color: #6e6868;
+  /* color of the handle */
+  border-radius: 5px;
+  /* roundness of the handle */ }

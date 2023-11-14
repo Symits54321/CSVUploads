@@ -3,6 +3,7 @@ const port = 8150;
 
 
 // Requiring dependencies
+
 const express = require('express');
 const cors = require('cors');
 const cookieParser=require('cookie-parser');
@@ -10,6 +11,8 @@ const app = express();
 const expressLayouts = require('express-ejs-layouts');
 const db = require('./config/mongoose');
 const multer = require('multer');
+
+
 //const session = require('express-session');
 //const passport = require('passport');
 //const passportLocal = require('./config/passport-local-strategy');
@@ -121,16 +124,15 @@ app.use(session({
 
 
 
+
+
 //routes
 
 app.use('/',require('./routes/index'));
 
 
 
-
-
-
-
+ 
 
 
 // Listening
@@ -145,3 +147,4 @@ app.listen(port,function(err){
 
 
 
+ 
