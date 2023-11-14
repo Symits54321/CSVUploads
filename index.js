@@ -21,7 +21,7 @@ const path = require('path');
 
 //cors error handler(in deploying)
 const allowedOrigins = [
-    'https://issue-tracker-symits.onrender.com',
+    'https://csvuploadsbysymits54321.onrender.com/',
     // Add any other allowed origins here.
   ];
   
