@@ -1,3 +1,4 @@
+const dotenv=require('dotenv').config();
 const port = 8150;
 
 
@@ -140,12 +141,14 @@ app.use('/',require('./routes/index'));
 app.listen(port,function(err){
     if(err){
         console.log('not able to listen port');
+       
     }
-    console.log(`CSV Uploads is Listening to port:${port}`);
+    console.log(`CSV Uploads is Listening to port:${port}`); 
+    
 });
-
-
-
+  
 
 
  
+
+   

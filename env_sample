@@ -1,0 +1,17 @@
+HELLO="Sumit"
+
+// you will get yhe json once you get about firebase-admin 
+
+SERVICE_ACCOUNT='{
+  "type": "",
+  "project_id": "",
+  "private_key_id": "",
+  "private_key": "",
+  "client_email": "",
+  "client_id": "",
+  "auth_uri": "",
+  "token_uri": "",
+  "auth_provider_x509_cert_url": "",
+  "client_x509_cert_url": "",
+  "universe_domain": ""
+}'

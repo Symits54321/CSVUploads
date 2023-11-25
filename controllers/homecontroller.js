@@ -17,14 +17,7 @@ let uploadedFiles; // no use now
 
 const { Storage } = require('@google-cloud/storage');
 const admin = require('../config/firebaseConfig');
-/*
-const serviceAccount = require('../routes/cred/csvuploadbysumit-firebase-adminsdk-u2oqg-192f533358.json'); // Path to your Firebase service account key JSON file
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  storageBucket: 'csvuploadbysumit.appspot.com/' // Replace with your Firebase Storage Bucket URL
-});
-*/
 const bucket = admin.storage().bucket();
 
 const multerStorage = multer.memoryStorage();
