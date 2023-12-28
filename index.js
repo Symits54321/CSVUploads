@@ -4,7 +4,7 @@ const port = 8150;
 
 
 // Requiring dependencies
-
+const functions = require('firebase-functions');
 const express = require('express');
 const cors = require('cors');
 const cookieParser=require('cookie-parser');
@@ -130,7 +130,7 @@ app.use(session({
 
 //routes
 
-app.use('/',require('./routes/index'));
+app.use('/',require('./build/routes/index'));
 
 
 
@@ -148,7 +148,7 @@ app.listen(port,function(err){
 });
   
 
-
+exports.app = functions.https.onRequest(app);
  
 
    
