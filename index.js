@@ -130,7 +130,7 @@ app.use(session({
 
 //routes
 
-app.use('/',require('./build/routes/index'));
+app.use('/',require('./routes/index'));
 
 
 
